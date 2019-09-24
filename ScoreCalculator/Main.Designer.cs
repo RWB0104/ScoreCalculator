@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.numericUpDownTotal = new System.Windows.Forms.NumericUpDown();
 			this.numericUpDownCorrect = new System.Windows.Forms.NumericUpDown();
 			this.labelTotal = new System.Windows.Forms.Label();
@@ -42,8 +43,11 @@
 			this.labelControl2 = new System.Windows.Forms.Label();
 			this.buttonClear = new System.Windows.Forms.Button();
 			this.labelCopyright = new System.Windows.Forms.Label();
+			this.numericUpDownWrong = new System.Windows.Forms.NumericUpDown();
+			this.labelWrong = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotal)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownCorrect)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDownWrong)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// numericUpDownTotal
@@ -80,7 +84,7 @@
 			// labelTotal
 			// 
 			this.labelTotal.AutoSize = true;
-			this.labelTotal.Location = new System.Drawing.Point(147, 83);
+			this.labelTotal.Location = new System.Drawing.Point(147, 119);
 			this.labelTotal.Name = "labelTotal";
 			this.labelTotal.Size = new System.Drawing.Size(29, 12);
 			this.labelTotal.TabIndex = 2;
@@ -89,7 +93,7 @@
 			// labelO
 			// 
 			this.labelO.AutoSize = true;
-			this.labelO.Location = new System.Drawing.Point(17, 83);
+			this.labelO.Location = new System.Drawing.Point(17, 119);
 			this.labelO.Name = "labelO";
 			this.labelO.Size = new System.Drawing.Size(29, 12);
 			this.labelO.TabIndex = 3;
@@ -98,7 +102,7 @@
 			// labelX
 			// 
 			this.labelX.AutoSize = true;
-			this.labelX.Location = new System.Drawing.Point(17, 110);
+			this.labelX.Location = new System.Drawing.Point(17, 146);
 			this.labelX.Name = "labelX";
 			this.labelX.Size = new System.Drawing.Size(29, 12);
 			this.labelX.TabIndex = 4;
@@ -107,7 +111,7 @@
 			// labelAvg
 			// 
 			this.labelAvg.AutoSize = true;
-			this.labelAvg.Location = new System.Drawing.Point(147, 110);
+			this.labelAvg.Location = new System.Drawing.Point(147, 146);
 			this.labelAvg.Name = "labelAvg";
 			this.labelAvg.Size = new System.Drawing.Size(29, 12);
 			this.labelAvg.TabIndex = 5;
@@ -115,7 +119,7 @@
 			// 
 			// textBoxTotal
 			// 
-			this.textBoxTotal.Location = new System.Drawing.Point(183, 80);
+			this.textBoxTotal.Location = new System.Drawing.Point(183, 116);
 			this.textBoxTotal.Name = "textBoxTotal";
 			this.textBoxTotal.ReadOnly = true;
 			this.textBoxTotal.Size = new System.Drawing.Size(72, 21);
@@ -123,7 +127,7 @@
 			// 
 			// textBoxO
 			// 
-			this.textBoxO.Location = new System.Drawing.Point(53, 80);
+			this.textBoxO.Location = new System.Drawing.Point(53, 116);
 			this.textBoxO.Name = "textBoxO";
 			this.textBoxO.ReadOnly = true;
 			this.textBoxO.Size = new System.Drawing.Size(72, 21);
@@ -131,7 +135,7 @@
 			// 
 			// textBoxX
 			// 
-			this.textBoxX.Location = new System.Drawing.Point(53, 107);
+			this.textBoxX.Location = new System.Drawing.Point(53, 143);
 			this.textBoxX.Name = "textBoxX";
 			this.textBoxX.ReadOnly = true;
 			this.textBoxX.Size = new System.Drawing.Size(72, 21);
@@ -139,7 +143,7 @@
 			// 
 			// textBoxAvg
 			// 
-			this.textBoxAvg.Location = new System.Drawing.Point(183, 107);
+			this.textBoxAvg.Location = new System.Drawing.Point(183, 143);
 			this.textBoxAvg.Name = "textBoxAvg";
 			this.textBoxAvg.ReadOnly = true;
 			this.textBoxAvg.Size = new System.Drawing.Size(72, 21);
@@ -166,7 +170,7 @@
 			// buttonClear
 			// 
 			this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.buttonClear.Location = new System.Drawing.Point(101, 151);
+			this.buttonClear.Location = new System.Drawing.Point(101, 183);
 			this.buttonClear.Name = "buttonClear";
 			this.buttonClear.Size = new System.Drawing.Size(75, 23);
 			this.buttonClear.TabIndex = 12;
@@ -177,17 +181,43 @@
 			// labelCopyright
 			// 
 			this.labelCopyright.AutoSize = true;
-			this.labelCopyright.Location = new System.Drawing.Point(12, 186);
+			this.labelCopyright.Location = new System.Drawing.Point(12, 222);
 			this.labelCopyright.Name = "labelCopyright";
 			this.labelCopyright.Size = new System.Drawing.Size(259, 12);
 			this.labelCopyright.TabIndex = 13;
 			this.labelCopyright.Text = "Copyright (C) 2019. RWB. All Rights Reserve.";
 			// 
+			// numericUpDownWrong
+			// 
+			this.numericUpDownWrong.Cursor = System.Windows.Forms.Cursors.Default;
+			this.numericUpDownWrong.Location = new System.Drawing.Point(183, 50);
+			this.numericUpDownWrong.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+			this.numericUpDownWrong.Name = "numericUpDownWrong";
+			this.numericUpDownWrong.Size = new System.Drawing.Size(72, 21);
+			this.numericUpDownWrong.TabIndex = 14;
+			this.numericUpDownWrong.ValueChanged += new System.EventHandler(this.NumericUpDownWrong_ValueChanged);
+			this.numericUpDownWrong.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NumericUpDownWrong_KeyUp);
+			// 
+			// labelWrong
+			// 
+			this.labelWrong.AutoSize = true;
+			this.labelWrong.Location = new System.Drawing.Point(147, 52);
+			this.labelWrong.Name = "labelWrong";
+			this.labelWrong.Size = new System.Drawing.Size(29, 12);
+			this.labelWrong.TabIndex = 15;
+			this.labelWrong.Text = "오답";
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(279, 206);
+			this.ClientSize = new System.Drawing.Size(279, 244);
+			this.Controls.Add(this.labelWrong);
+			this.Controls.Add(this.numericUpDownWrong);
 			this.Controls.Add(this.labelCopyright);
 			this.Controls.Add(this.buttonClear);
 			this.Controls.Add(this.labelControl2);
@@ -202,10 +232,13 @@
 			this.Controls.Add(this.labelTotal);
 			this.Controls.Add(this.numericUpDownCorrect);
 			this.Controls.Add(this.numericUpDownTotal);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Main";
-			this.Text = "Score Calculator";
+			this.Text = " ";
+			this.Load += new System.EventHandler(this.Main_Load);
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownCorrect)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDownWrong)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -227,6 +260,8 @@
 		private System.Windows.Forms.Label labelControl2;
 		private System.Windows.Forms.Button buttonClear;
 		private System.Windows.Forms.Label labelCopyright;
+		private System.Windows.Forms.NumericUpDown numericUpDownWrong;
+		private System.Windows.Forms.Label labelWrong;
 	}
 }
 
