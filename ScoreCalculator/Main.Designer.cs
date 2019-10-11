@@ -215,6 +215,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(279, 244);
 			this.Controls.Add(this.labelWrong);
 			this.Controls.Add(this.numericUpDownWrong);
@@ -234,7 +235,7 @@
 			this.Controls.Add(this.numericUpDownTotal);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Main";
-			this.Text = " ";
+			this.Text = "Score Calculation";
 			this.Load += new System.EventHandler(this.Main_Load);
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownCorrect)).EndInit();
